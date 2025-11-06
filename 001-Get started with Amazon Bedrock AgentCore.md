@@ -9,36 +9,28 @@
 ### 1.2 Access Key信息  
 
 1. 进入到IAM界面，在左侧导航栏选择Users，找到自己对应的账号，点击进入；
-<figure>
+<figure id="fig1">
     <img src="src/img_id_01.png" alt="user location" />
-    <figcaption id="fig1" style="margin-top:6px; text-align:center;">
-        图1：个人用户位置
-    </figcaption>
 </figure>
+<p align="center">图1：个人用户位置</p>
 
-2. 选择Security credentials，找到Access key,点击Create access key；
-<figure>
+2. 选择Security credentials，找到Access key，点击Create access key；
+<figure id="fig2">
     <img src="src/img_id_02.png" alt="create key" />
-    <figcaption id="fig2" style="margin-top:6px; text-align:center;">
-        图2：创建秘钥
-    </figcaption>
 </figure>
+<p align="center">图2：创建秘钥</p>
 
 3. 可以根据需要进行选择，默认选择第一项Command Line Interface(CLI)，然后确定，然后就可以得到秘钥；
-<figure>
+<figure id="fig3">
     <img src="src/img_id_03.png" alt="use case" />
-    <figcaption id="fig3" style="margin-top:6px; text-align:center;">
-        图3：选择Use Case
-    </figcaption>
 </figure>
+<p align="center">图3：选择Use Case</p>
 
 4. 回到Security credentials页面，就可以看到创建的Access Key ID和秘钥；
-<figure>
+<figure id="fig4">
     <img src="src/img_id_04.png" alt="get key info" />
-    <figcaption id="fig4" style="margin-top:6px; text-align:center;">
-        图4：获取ID和Key
-    </figcaption>
 </figure>
+<p align="center">图4：获取ID和Key</p>
 
 ### 1.3 依赖软件安装
 - 本地安装AWS CLI，安装方法见[官网指导](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)；
@@ -52,15 +44,13 @@
 
 ### 1.4 aws本地配置
 使用命令`aws configure`进行aws本地配置，配置信息如下：
-<figure>
+<figure id="fig5">
     <img src="src/img_id_05.png" alt="local aws configure" />
-    <figcaption id="fig5" style="margin-top:6px; text-align:center;">
-        图5：本地aws配置
-    </figcaption>
 </figure>
+<p align="center">图5：本地aws配置</p>
 
-- AWS Access Key ID：即为[图4]((#fig4))中的Key ID；
-- AWS Secret Access Key：即为执行为[图3]((#fig3))获取到的Key；
+- AWS Access Key ID：即为[图4](#fig4)中的Key ID；
+- AWS Secret Access Key：即为执行为[图3](#fig3)获取到的Key；
 - Default region name：根据自己的所有region进行配置；
 - Default output format：默认为json，可以选择其他格式；
 
@@ -144,12 +134,10 @@ if __name__ == "__main__":
 aws bedrock list-foundation-models --region ap-southeast-1
 ```
 得到的列表如[图6]((#fig6))：
-<figure>
+<figure id="fig6">
     <img src="src/img_id_06.png" alt="Model list" />
-    <figcaption id="fig6" style="margin-top:6px; text-align:center;">
-        图6：模型列表
-    </figcaption>
 </figure>
+<p align="center">图6：模型列表</p>
 
 可以根据返回的模型列表进行选择，获取对应模型的modelID即可。
 
