@@ -27,7 +27,8 @@
 <p align="center">图3：选择Use Case</p>
 
 4. 回到Security credentials页面，就可以看到创建的Access Key ID和秘钥；
-<figure id="fig4">
+<a id="fig4"></a>
+<figure>
     <img src="src/img_id_04.png" alt="get key info" />
 </figure>
 <p align="center">图4：获取ID和Key</p>
