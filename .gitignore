@@ -1,0 +1,9 @@
+# Environment
+venv/
+.env
+
+# IDEs and editors
+.idea/
+
+# other
+.dockerignore
