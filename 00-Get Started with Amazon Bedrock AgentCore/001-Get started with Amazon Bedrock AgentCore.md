@@ -11,28 +11,28 @@
 1. 进入到IAM界面，在左侧导航栏选择Users，找到自己对应的账号，点击进入；
 <a id="fig1"></a>
 <figure>
-    <img src="src/img_id_01.png" alt="user location" />
+    <img src="../src/img_id_01.png" alt="user location" />
 </figure>
 <p align="center">图1：个人用户位置</p>
 
 2. 选择Security credentials，找到Access key，点击Create access key；
 <a id="fig2"></a>
 <figure>
-    <img src="src/img_id_02.png" alt="create key" />
+    <img src="../src/img_id_02.png" alt="create key" />
 </figure>
 <p align="center">图2：创建秘钥</p>
 
 3. 可以根据需要进行选择，默认选择第一项Command Line Interface(CLI)，然后确定，然后就可以得到秘钥；
 <a id="fig3"></a>
 <figure>
-    <img src="src/img_id_03.png" alt="use case" />
+    <img src="../src/img_id_03.png" alt="use case" />
 </figure>
 <p align="center">图3：选择Use Case</p>
 
 4. 回到Security credentials页面，就可以看到创建的Access Key ID和秘钥；
 <a id="fig4"></a>
 <figure>
-    <img src="src/img_id_04.png" alt="get key info" />
+    <img src="../src/img_id_04.png" alt="get key info" />
 </figure>
 <p align="center">图4：获取ID和Key</p>
 
@@ -50,7 +50,7 @@
 使用命令`aws configure`进行aws本地配置，配置信息如下：
 <a id="fig5"></a>
 <figure>
-    <img src="src/img_id_05.png" alt="local aws configure" />
+    <img src="../src/img_id_05.png" alt="local aws configure" />
 </figure>
 <p align="center">图5：本地aws配置</p>
 
@@ -141,7 +141,7 @@ aws bedrock list-foundation-models --region ap-southeast-1
 得到的列表如[图6](#fig6)：
 <a id="fig6"></a>
 <figure>
-    <img src="src/img_id_06.png" alt="Model list" />
+    <img src="../src/img_id_06.png" alt="Model list" />
 </figure>
 <p align="center">图6：模型列表</p>
 

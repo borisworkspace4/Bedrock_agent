@@ -1,8 +1,4 @@
-bedrock-agentcore
-bedrock-agentcore-starter-toolkit>=0.1.21
-strands-agents
-strands-agents-tools
-boto3
+jupyter
 
 
 
