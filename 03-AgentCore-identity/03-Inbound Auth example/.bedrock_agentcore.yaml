@@ -1,0 +1,36 @@
+default_agent: strands_agent_inbound_identity
+agents:
+  strands_agent_inbound_identity:
+    name: strands_agent_inbound_identity
+    entrypoint: D:/Code/github/Bedrock_agent/03-AgentCore-identity/03-Inbound Auth
+      example/strands_claude.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::566801649110:role/AmazonBedrockAgentCoreSDKRuntime-ap-southeast-1-2213d1079e
+      execution_role_auto_create: false
+      account: '566801649110'
+      region: ap-southeast-1
+      ecr_repository: 566801649110.dkr.ecr.ap-southeast-1.amazonaws.com/bedrock-agentcore-strands_agent_inbound_identity
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: strands_agent_inbound_identity-6CtgJv4ku8
+      agent_arn: arn:aws:bedrock-agentcore:ap-southeast-1:566801649110:runtime/strands_agent_inbound_identity-6CtgJv4ku8
+      agent_session_id: 5250d65a-7039-4d4e-9c46-4abf7d2756e0
+    codebuild:
+      project_name: bedrock-agentcore-strands_agent_inbound_identity-builder
+      execution_role: arn:aws:iam::566801649110:role/AmazonBedrockAgentCoreSDKCodeBuild-ap-southeast-1-2213d1079e
+      source_bucket: bedrock-agentcore-codebuild-sources-566801649110-ap-southeast-1
+    authorizer_configuration:
+      customJWTAuthorizer:
+        discoveryUrl: https://cognito-idp.ap-southeast-1.amazonaws.com/ap-southeast-1_dXwdXw8N7/.well-known/openid-configuration
+        allowedClients:
+        - 3abmk495ve2gcs1pu19h2tdhj1
+    request_header_configuration: null
+    oauth_configuration: null

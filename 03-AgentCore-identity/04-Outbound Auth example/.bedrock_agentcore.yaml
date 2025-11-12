@@ -1,0 +1,32 @@
+default_agent: strands_agents_openai
+agents:
+  strands_agents_openai:
+    name: strands_agents_openai
+    entrypoint: D:/Code/github/Bedrock_agent/03-AgentCore-identity/04-Outbound Auth
+      example/strands_agents_openai.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::566801649110:role/AmazonBedrockAgentCoreSDKRuntime-ap-southeast-1-5d0a5e0561
+      execution_role_auto_create: false
+      account: '566801649110'
+      region: ap-southeast-1
+      ecr_repository: 566801649110.dkr.ecr.ap-southeast-1.amazonaws.com/bedrock-agentcore-strands_agents_openai
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: strands_agents_openai-HwbpkMBz7a
+      agent_arn: arn:aws:bedrock-agentcore:ap-southeast-1:566801649110:runtime/strands_agents_openai-HwbpkMBz7a
+      agent_session_id: 5b7b3082-87b5-43b5-9842-7eb930787389
+    codebuild:
+      project_name: bedrock-agentcore-strands_agents_openai-builder
+      execution_role: arn:aws:iam::566801649110:role/AmazonBedrockAgentCoreSDKCodeBuild-ap-southeast-1-5d0a5e0561
+      source_bucket: bedrock-agentcore-codebuild-sources-566801649110-ap-southeast-1
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
