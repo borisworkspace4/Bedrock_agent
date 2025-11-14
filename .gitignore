@@ -7,3 +7,4 @@ venv/
 
 # other
 .dockerignore
+__pycache__/
