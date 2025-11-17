@@ -30,8 +30,7 @@ import json
 from datetime import timedelta
 from fastapi import FastAPI, HTTPException, status
 from fastapi.responses import HTMLResponse
-from bedrock_agentcore.services.identity import IdentityClient
-from pydantic import BaseModel
+from bedrock_agentcore.services.identity import IdentityClient, UserTokenIdentifier
 
 # Configuration constants for the OAuth2 callback server
 OAUTH2_CALLBACK_SERVER_PORT = 9090  # Port where the callback server listens
@@ -126,9 +125,6 @@ def _get_internal_base_url() -> str:
     """
     return f"http://localhost:{OAUTH2_CALLBACK_SERVER_PORT}"
 
-
-class UserTokenIdentifier(BaseModel):
-    token: str
 
 class OAuth2CallbackServer:
     """

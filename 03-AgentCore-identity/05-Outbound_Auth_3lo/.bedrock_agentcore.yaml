@@ -1,0 +1,35 @@
+default_agent: strands_agent_google_3lo
+agents:
+  strands_agent_google_3lo:
+    name: strands_agent_google_3lo
+    entrypoint: D:/Code/github/Bedrock_agent/03-AgentCore-identity/05-Outbound_Auth_3lo/strands_claude_google_3lo.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::566801649110:role/AmazonBedrockAgentCoreSDKRuntime-ap-southeast-1-b868d44c0b
+      execution_role_auto_create: false
+      account: '566801649110'
+      region: ap-southeast-1
+      ecr_repository: 566801649110.dkr.ecr.ap-southeast-1.amazonaws.com/bedrock-agentcore-strands_agent_google_3lo
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: strands_agent_google_3lo-6oLTKJDR3z
+      agent_arn: arn:aws:bedrock-agentcore:ap-southeast-1:566801649110:runtime/strands_agent_google_3lo-6oLTKJDR3z
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-strands_agent_google_3lo-builder
+      execution_role: arn:aws:iam::566801649110:role/AmazonBedrockAgentCoreSDKCodeBuild-ap-southeast-1-b868d44c0b
+      source_bucket: bedrock-agentcore-codebuild-sources-566801649110-ap-southeast-1
+    authorizer_configuration:
+      customJWTAuthorizer:
+        discoveryUrl: https://cognito-idp.ap-southeast-1.amazonaws.com/ap-southeast-1_ucKGbLQX9/.well-known/openid-configuration
+        allowedClients:
+        - 373t4kee6ectjmfcn6f3v33i24
+    request_header_configuration: null
+    oauth_configuration: null
