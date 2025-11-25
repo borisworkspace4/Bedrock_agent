@@ -28,8 +28,8 @@ agents:
       source_bucket: bedrock-agentcore-codebuild-sources-566801649110-ap-southeast-1
     authorizer_configuration:
       customJWTAuthorizer:
-        discoveryUrl: https://cognito-idp.ap-southeast-1.amazonaws.com/ap-southeast-1_beZbraZUE/.well-known/openid-configuration
+        discoveryUrl: https://cognito-idp.ap-southeast-1.amazonaws.com/ap-southeast-1_Ko1s4ooNU/.well-known/openid-configuration
         allowedClients:
-        - 71hod75278f70sc1j7jfd41sbl
+        - 5oef1r9utdhdhen13aoc7cnf1r
     request_header_configuration: null
     oauth_configuration: null

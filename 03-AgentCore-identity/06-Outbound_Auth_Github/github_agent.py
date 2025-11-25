@@ -181,7 +181,7 @@ async def agent_task(user_message: str) -> None:
     auth_flow='USER_FEDERATION',
     on_auth_url=on_auth_url,
     force_authentication=False,  # ← Changed to False - will use cached token!
-    callback_url="https://bedrock-agentcore.ap-southeast-1.amazonaws.com/identities/oauth2/callback/1bd250f4-eedb-48f9-8d34-14075994a291"  # ← Callback URL determined from notebook environment
+    callback_url="http://localhost:9090/oauth2/callback"  # ← Callback URL determined from notebook environment
 )
 async def need_token_3LO_async(*, access_token: str) -> str:
     """Handle 3LO authentication flow."""
@@ -192,7 +192,7 @@ async def need_token_3LO_async(*, access_token: str) -> str:
 
 # Create agent instance
 agent = Agent(
-    model="anthropic.claude-3-haiku-20240307-v1:0",
+    model="us.anthropic.claude-3-7-sonnet-20250219-v1:0",
     tools=[inspect_github_repos],
     system_prompt="""You are a GitHub assistant. Use the inspect_github_repos tool to fetch private repositories data.
     The inspect_github_repos tool handles token exchange and proper authentication with the GitHub API
