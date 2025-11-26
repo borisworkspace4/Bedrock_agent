@@ -1,0 +1,6 @@
+{
+    "agent_arn": "arn:aws:bedrock-agentcore:ap-southeast-1:566801649110:runtime/strands_claude_getting_started_20251126_162016-6C3Zra4PL2",
+    "agent_id": "strands_claude_getting_started_20251126_162016-6C3Zra4PL2",
+    "ecr_uri": "566801649110.dkr.ecr.ap-southeast-1.amazonaws.com/bedrock-agentcore-strands_claude_getting_started_20251126_162016",
+    "repositoryName": "bedrock-agentcore-strands_claude_getting_started_20251126_162016"
+}
