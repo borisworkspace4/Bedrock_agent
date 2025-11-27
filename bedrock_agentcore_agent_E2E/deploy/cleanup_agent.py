@@ -1,15 +1,15 @@
 # deploy/cleanup_agent.py
 import boto3
-from config.settings import REGION
+from config.settings import settings
 from config.agent_metadata import load_launch_metadata
 
 agentcore_control_client = boto3.client(
-    'bedrock-agentcore-control',
-    region_name=REGION
+    service_name=settings.agentcore_service_name,
+    region_name=settings.region
 )
 ecr_client = boto3.client(
-    'ecr',
-    region_name=REGION
+    service_name=settings.ecr_service_name,
+    region_name=settings.region
 
 )
 

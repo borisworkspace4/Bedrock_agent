@@ -4,13 +4,13 @@ from datetime import datetime
 
 from bedrock_agentcore_starter_toolkit import Runtime
 
-from config.settings import ENTRYPOINT, REQUIREMENTS_FILE, REGION, AGENT_NAME
+from config.settings import settings
 from config.agent_metadata import save_launch_metadata
 
 # 1. 生成带时间戳的 agent_name
 def gen_agent_name() -> str:
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")  # 例如 20251125-153045
-    return f"{AGENT_NAME}_{ts}"
+    return f"{settings.agent_name}_{ts}"
 
 
 # 2. 初始化 Runtime
@@ -21,11 +21,11 @@ agent_name = gen_agent_name()
 print("本次部署使用的 agent_name:", agent_name)
 
 response = agentcore_runtime.configure(
-    entrypoint=ENTRYPOINT,
+    entrypoint=settings.entrypoint,
     auto_create_execution_role=True,
     auto_create_ecr=True,
-    requirements_file=REQUIREMENTS_FILE,
-    region=REGION,
+    requirements_file=settings.requirements_file,
+    region=settings.region,
     agent_name=agent_name,
 )
 print("configure 响应：", response)

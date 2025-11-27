@@ -1,6 +1,6 @@
 import json
 import boto3
-from config.settings import REGION
+from config.settings import settings
 from config.agent_metadata import load_launch_metadata
 
 # 读取 metadata
@@ -8,12 +8,11 @@ info = load_launch_metadata()
 agent_arn = info["agent_arn"]
 agent_id = info["agent_id"]
 repositoryName = info["repositoryName"]
-region = REGION
 
 # 创建 AgentCore 客户端
 agentcore_client = boto3.client(
     'bedrock-agentcore',
-    region_name=region
+    region_name=settings.region
 )
 
 
